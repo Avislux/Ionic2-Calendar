@@ -131,15 +131,18 @@ export enum Step {
         <template #monthviewDefaultDisplayEventTemplate let-view="view" let-row="row" let-col="col">
             {{view.dates[row*7+col].label}}
         </template>
+        <div id="selectedDate" text-center style="border:none;">
+            {{this.currentDate.getMonth()+1}}/{{this.currentDate.getDate()}}/{{this.currentDate.getFullYear()}} {{this.weekdayNames[this.currentDate.getDay()]}}
+        </div>
         <template #monthviewDefaultEventDetailTemplate let-showEventDetail="showEventDetail" let-selectedDate="selectedDate" let-noEventsLabel="noEventsLabel">
             <ion-list class="event-detail-container" has-bouncing="false" *ngIf="showEventDetail" overflow-scroll="false">
-                <ion-item *ngFor="let event of selectedDate?.events" (click)="eventSelected(event)">
+                <ion-item *ngFor="let event of selectedDate?.events" (tap)="eventSelected(event)">
                         <span *ngIf="!event.allDay" class="monthview-eventdetail-timecolumn">{{event.startTime|date: 'HH:mm'}}
                             -
                             {{event.endTime|date: 'HH:mm'}}
                         </span>
                     <span *ngIf="event.allDay" class="monthview-eventdetail-timecolumn">{{allDayLabel}}</span>
-                    <span class="event-detail">  |  {{event.title}}</span>
+                    <span class="event-detail">  {{event.title}}</span>
                 </ion-item>
                 <ion-item *ngIf="selectedDate?.events.length==0">
                     <div class="no-events-label">{{noEventsLabel}}</div>
@@ -293,7 +296,7 @@ export class CalendarComponent implements OnInit {
     @Input() showEventDetail:boolean = true;
     @Input() startingDayMonth:number = 0;
     @Input() startingDayWeek:number = 0;
-    @Input() allDayLabel:string = 'all day';
+    @Input() allDayLabel:string = 'All day';
     @Input() noEventsLabel:string = 'No Events';
     @Input() queryMode:QueryMode = 'local';
     @Input() step:Step = Step.Hour;
@@ -323,6 +326,7 @@ export class CalendarComponent implements OnInit {
     private _currentDate:Date;
     private hourParts = 1;
     private currentDateChangedFromChildrenSubscription:Subscription;
+    weekdayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday', 'Friday','Saturday'];
 
     constructor(private calendarService:CalendarService, @Inject(LOCALE_ID) private appLocale:string) {
         this.locale = appLocale;

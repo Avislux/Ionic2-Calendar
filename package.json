@@ -1,5 +1,5 @@
 {
-    "name": "ionic2-calendar",
+    "name": "ionic2-calendar-jt",
     "version": "0.2.14",
     "description": "Ionic2 calendar component",
     "keywords": [
@@ -12,7 +12,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/twinssbc/Ionic2-Calendar.git"
+        "url": "git+https://github.com/avislux/Ionic2-Calendar.git"
     },
     "scripts": {
         "build": "rm -rf dist && tsc",
