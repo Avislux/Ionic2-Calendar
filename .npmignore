@@ -3,6 +3,3 @@
 /node_modules
 /demo
 /typings
-
-*.ts
-!*.d.ts

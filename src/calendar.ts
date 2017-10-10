@@ -131,9 +131,6 @@ export enum Step {
         <template #monthviewDefaultDisplayEventTemplate let-view="view" let-row="row" let-col="col">
             {{view.dates[row*7+col].label}}
         </template>
-        <div id="selectedDate" text-center style="border:none;">
-            {{this.currentDate.getMonth()+1}}/{{this.currentDate.getDate()}}/{{this.currentDate.getFullYear()}} {{this.weekdayNames[this.currentDate.getDay()]}}
-        </div>
         <template #monthviewDefaultEventDetailTemplate let-showEventDetail="showEventDetail" let-selectedDate="selectedDate" let-noEventsLabel="noEventsLabel">
             <ion-list class="event-detail-container" has-bouncing="false" *ngIf="showEventDetail" overflow-scroll="false">
                 <ion-item *ngFor="let event of selectedDate?.events" (tap)="eventSelected(event)">
