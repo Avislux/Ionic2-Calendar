@@ -23,11 +23,13 @@
         "postinstall": "typings install"
     },
     "main": "./index.js",
-    "dependencies": {},
+    "dependencies": {
+        "angular2-template-compiler": "^0.1.9"
+    },
     "devDependencies": {
         "@angular/cli": "^1.4.5",
         "@angular/common": "2.4.8",
-        "@angular/compiler": "2.4.8",
+        "@angular/compiler": "^2.4.8",
         "@angular/compiler-cli": "2.4.8",
         "@angular/core": "2.4.8",
         "@angular/forms": "2.4.8",
@@ -37,9 +39,9 @@
         "@angular/platform-server": "2.4.8",
         "intl": "^1.2.5",
         "ionic-angular": "2.3.0",
-        "rxjs": "5.0.1",
+        "rxjs": "^5.0.1",
         "tslint-ionic-rules": "0.0.5",
-        "typescript": "2.0.3",
+        "typescript": "^2.6.0-dev.20171010",
         "typings": "1.3.1",
         "zone.js": "0.7.2"
     }

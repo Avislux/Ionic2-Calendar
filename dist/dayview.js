@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var common_1 = require('@angular/common');
-var ionic_angular_1 = require('ionic-angular');
-var core_1 = require('@angular/core');
-var calendar_service_1 = require('./calendar.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var common_1 = require("@angular/common");
+var ionic_angular_1 = require("ionic-angular");
+var core_1 = require("@angular/core");
+var calendar_service_1 = require("./calendar.service");
 var DayViewComponent = (function () {
     function DayViewComponent(calendarService, elm) {
         this.calendarService = calendarService;
@@ -34,6 +35,7 @@ var DayViewComponent = (function () {
         this.inited = false;
         this.callbackOnInit = true;
     }
+    DayViewComponent_1 = DayViewComponent;
     DayViewComponent.prototype.ngOnInit = function () {
         var _this = this;
         if (this.dateFormatter && this.dateFormatter.formatDayViewTitle) {
@@ -162,7 +164,7 @@ var DayViewComponent = (function () {
     };
     DayViewComponent.prototype.getViewData = function (startTime) {
         return {
-            rows: DayViewComponent.createDateObjects(startTime),
+            rows: DayViewComponent_1.createDateObjects(startTime),
             allDayEvents: []
         };
     };
@@ -247,7 +249,7 @@ var DayViewComponent = (function () {
             var orderedEvents = [];
             for (var hour = 0; hour < 24; hour += 1) {
                 if (rows[hour].events) {
-                    rows[hour].events.sort(DayViewComponent.compareEventByStartOffset);
+                    rows[hour].events.sort(DayViewComponent_1.compareEventByStartOffset);
                     orderedEvents = orderedEvents.concat(rows[hour].events);
                 }
             }
@@ -285,7 +287,7 @@ var DayViewComponent = (function () {
     };
     DayViewComponent.prototype.placeEvents = function (orderedEvents) {
         this.calculatePosition(orderedEvents);
-        DayViewComponent.calculateWidth(orderedEvents);
+        DayViewComponent_1.calculateWidth(orderedEvents);
     };
     DayViewComponent.prototype.placeAllDayEvents = function (orderedEvents) {
         this.calculatePosition(orderedEvents);
@@ -389,99 +391,100 @@ var DayViewComponent = (function () {
         this.initScrollPosition = scrollPosition;
     };
     __decorate([
-        core_1.ViewChild('daySlider'), 
-        __metadata('design:type', ionic_angular_1.Slides)
+        core_1.ViewChild('daySlider'),
+        __metadata("design:type", ionic_angular_1.Slides)
     ], DayViewComponent.prototype, "slider", void 0);
     __decorate([
-        core_1.HostBinding('class.dayview'), 
-        __metadata('design:type', Object)
+        core_1.HostBinding('class.dayview'),
+        __metadata("design:type", Object)
     ], DayViewComponent.prototype, "class", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', core_1.TemplateRef)
+        core_1.Input(),
+        __metadata("design:type", core_1.TemplateRef)
     ], DayViewComponent.prototype, "dayviewAllDayEventTemplate", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', core_1.TemplateRef)
+        core_1.Input(),
+        __metadata("design:type", core_1.TemplateRef)
     ], DayViewComponent.prototype, "dayviewNormalEventTemplate", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], DayViewComponent.prototype, "formatHourColumn", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], DayViewComponent.prototype, "formatDayTitle", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], DayViewComponent.prototype, "allDayLabel", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
+        core_1.Input(),
+        __metadata("design:type", Number)
     ], DayViewComponent.prototype, "hourParts", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Array)
+        core_1.Input(),
+        __metadata("design:type", Array)
     ], DayViewComponent.prototype, "eventSource", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Function)
+        core_1.Input(),
+        __metadata("design:type", Function)
     ], DayViewComponent.prototype, "markDisabled", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], DayViewComponent.prototype, "locale", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
+        core_1.Input(),
+        __metadata("design:type", Object)
     ], DayViewComponent.prototype, "dateFormatter", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], DayViewComponent.prototype, "dir", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
+        core_1.Input(),
+        __metadata("design:type", Number)
     ], DayViewComponent.prototype, "scrollToHour", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
+        core_1.Input(),
+        __metadata("design:type", Boolean)
     ], DayViewComponent.prototype, "preserveScrollPosition", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
+        core_1.Input(),
+        __metadata("design:type", Boolean)
     ], DayViewComponent.prototype, "lockSwipeToPrev", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
+        core_1.Input(),
+        __metadata("design:type", Boolean)
     ], DayViewComponent.prototype, "lockSwipes", void 0);
     __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
+        core_1.Output(),
+        __metadata("design:type", Object)
     ], DayViewComponent.prototype, "onRangeChanged", void 0);
     __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
+        core_1.Output(),
+        __metadata("design:type", Object)
     ], DayViewComponent.prototype, "onEventSelected", void 0);
     __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
+        core_1.Output(),
+        __metadata("design:type", Object)
     ], DayViewComponent.prototype, "onTimeSelected", void 0);
     __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
+        core_1.Output(),
+        __metadata("design:type", Object)
     ], DayViewComponent.prototype, "onTitleChanged", void 0);
-    DayViewComponent = __decorate([
+    DayViewComponent = DayViewComponent_1 = __decorate([
         core_1.Component({
             selector: 'dayview',
             template: "\n        <ion-slides #daySlider [loop]=\"true\" [dir]=\"dir\" (ionSlideDidChange)=\"onSlideChanged()\">\n            <ion-slide>\n                <div class=\"dayview-allday-table\">\n                    <div class=\"dayview-allday-label\">{{allDayLabel}}</div>\n                    <ion-scroll scrollY=\"true\" zoom=\"false\" class=\"dayview-allday-content-wrapper\">\n                        <table class=\"table table-bordered dayview-allday-content-table\">\n                            <tbody>\n                            <tr>\n                                <td class=\"calendar-cell\" [ngClass]=\"{'calendar-event-wrap':views[0].allDayEvents.length>0}\"\n                                    [ngStyle]=\"{height: 25*views[0].allDayEvents.length+'px'}\"\n                                    *ngIf=\"0===currentViewIndex\">\n                                    <div *ngFor=\"let displayEvent of views[0].allDayEvents; let eventIndex=index\"\n                                         class=\"calendar-event\" tappable\n                                         (click)=\"eventSelected(displayEvent.event)\"\n                                         [ngStyle]=\"{top: 25*eventIndex+'px',width: '100%',height:'25px'}\">\n                                        <template [ngTemplateOutlet]=\"dayviewAllDayEventTemplate\"\n                                            [ngOutletContext]=\"{displayEvent:displayEvent}\">\n                                        </template>\n                                    </div>\n                                </td>\n                                <td class=\"calendar-cell\" *ngIf=\"0!==currentViewIndex\">\n                                </td>\n                            </tr>\n                            </tbody>\n                        </table>\n                    </ion-scroll>\n                </div>\n                <init-position-scroll *ngIf=\"0===currentViewIndex\" class=\"dayview-normal-event-container\" [initPosition]=\"initScrollPosition\" [emitEvent]=\"preserveScrollPosition\" (onScroll)=\"setScrollPosition($event)\">\n                    <table class=\"table table-bordered table-fixed dayview-normal-event-table\">\n                        <tbody>\n                            <tr *ngFor=\"let tm of views[0].rows; let i = index\">\n                                <td class=\"calendar-hour-column text-center\">\n                                    {{hourColumnLabels[i]}}\n                                </td>\n                                <td class=\"calendar-cell\" tappable (click)=\"select(tm.time, tm.events)\">\n                                    <div [ngClass]=\"{'calendar-event-wrap': tm.events}\" *ngIf=\"tm.events\">\n                                        <div *ngFor=\"let displayEvent of tm.events\" class=\"calendar-event\" tappable\n                                             (click)=\"eventSelected(displayEvent.event)\"\n                                             [ngStyle]=\"{top: (37*displayEvent.startOffset/hourParts)+'px', left: 100/displayEvent.overlapNumber*displayEvent.position+'%', width: 100/displayEvent.overlapNumber+'%', height: 37*(displayEvent.endIndex -displayEvent.startIndex - (displayEvent.endOffset + displayEvent.startOffset)/hourParts)+'px'}\">\n                                             <template [ngTemplateOutlet]=\"dayviewNormalEventTemplate\"\n                                                 [ngOutletContext]=\"{displayEvent:displayEvent}\">\n                                             </template>\n                                        </div>\n                                    </div>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                </init-position-scroll>\n                <init-position-scroll *ngIf=\"0!==currentViewIndex\" class=\"dayview-normal-event-container\" [initPosition]=\"initScrollPosition\">\n                    <table class=\"table table-bordered table-fixed dayview-normal-event-table\">\n                        <tbody>\n                            <tr *ngFor=\"let tm of views[0].rows; let i = index\">\n                                <td class=\"calendar-hour-column text-center\">\n                                    {{hourColumnLabels[i]}}\n                                </td>\n                                <td class=\"calendar-cell\">\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                </init-position-scroll>\n            </ion-slide>\n            <ion-slide>\n                <div class=\"dayview-allday-table\">\n                    <div class=\"dayview-allday-label\">{{allDayLabel}}</div>\n                    <ion-scroll scrollY=\"true\" zoom=\"false\" class=\"dayview-allday-content-wrapper\">\n                        <table class=\"table table-bordered dayview-allday-content-table\">\n                            <tbody>\n                            <tr>\n                                <td class=\"calendar-cell\" [ngClass]=\"{'calendar-event-wrap':views[1].allDayEvents.length>0}\"\n                                    [ngStyle]=\"{height: 25*views[1].allDayEvents.length+'px'}\"\n                                    *ngIf=\"1===currentViewIndex\">\n                                    <div *ngFor=\"let displayEvent of views[1].allDayEvents; let eventIndex=index\"\n                                         class=\"calendar-event\" tappable\n                                         (click)=\"eventSelected(displayEvent.event)\"\n                                         [ngStyle]=\"{top: 25*eventIndex+'px',width: '100%',height:'25px'}\">\n                                        <template [ngTemplateOutlet]=\"dayviewAllDayEventTemplate\"\n                                            [ngOutletContext]=\"{displayEvent:displayEvent}\">\n                                        </template>\n                                    </div>\n                                </td>\n                                <td class=\"calendar-cell\" *ngIf=\"1!==currentViewIndex\">\n                                </td>\n                            </tr>\n                            </tbody>\n                        </table>\n                    </ion-scroll>\n                </div>\n                <init-position-scroll *ngIf=\"1===currentViewIndex\" class=\"dayview-normal-event-container\" [initPosition]=\"initScrollPosition\" [emitEvent]=\"preserveScrollPosition\" (onScroll)=\"setScrollPosition($event)\">\n                    <table class=\"table table-bordered table-fixed dayview-normal-event-table\">\n                        <tbody>\n                            <tr *ngFor=\"let tm of views[1].rows; let i = index\">\n                                <td class=\"calendar-hour-column text-center\">\n                                    {{hourColumnLabels[i]}}\n                                </td>\n                                <td class=\"calendar-cell\" tappable (click)=\"select(tm.time, tm.events)\">\n                                    <div [ngClass]=\"{'calendar-event-wrap': tm.events}\" *ngIf=\"tm.events\">\n                                        <div *ngFor=\"let displayEvent of tm.events\" class=\"calendar-event\" tappable\n                                             (click)=\"eventSelected(displayEvent.event)\"\n                                             [ngStyle]=\"{top: (37*displayEvent.startOffset/hourParts)+'px', left: 100/displayEvent.overlapNumber*displayEvent.position+'%', width: 100/displayEvent.overlapNumber+'%', height: 37*(displayEvent.endIndex -displayEvent.startIndex - (displayEvent.endOffset + displayEvent.startOffset)/hourParts)+'px'}\">\n                                             <template [ngTemplateOutlet]=\"dayviewNormalEventTemplate\"\n                                                 [ngOutletContext]=\"{displayEvent:displayEvent}\">\n                                             </template>\n                                        </div>\n                                    </div>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                </init-position-scroll>\n                <init-position-scroll *ngIf=\"1!==currentViewIndex\" class=\"dayview-normal-event-container\" [initPosition]=\"initScrollPosition\">\n                    <table class=\"table table-bordered table-fixed dayview-normal-event-table\">\n                        <tbody>\n                            <tr *ngFor=\"let tm of views[1].rows; let i = index\">\n                                <td class=\"calendar-hour-column text-center\">\n                                    {{hourColumnLabels[i]}}\n                                </td>\n                                <td class=\"calendar-cell\">\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                </init-position-scroll>\n            </ion-slide>\n            <ion-slide>\n                <div class=\"dayview-allday-table\">\n                    <div class=\"dayview-allday-label\">{{allDayLabel}}</div>\n                    <ion-scroll scrollY=\"true\" zoom=\"false\" class=\"dayview-allday-content-wrapper\">\n                        <table class=\"table table-bordered dayview-allday-content-table\">\n                            <tbody>\n                            <tr>\n                                <td class=\"calendar-cell\" [ngClass]=\"{'calendar-event-wrap':views[2].allDayEvents.length>0}\"\n                                    [ngStyle]=\"{height: 25*views[2].allDayEvents.length+'px'}\"\n                                    *ngIf=\"2===currentViewIndex\">\n                                    <div *ngFor=\"let displayEvent of views[2].allDayEvents; let eventIndex=index\"\n                                         class=\"calendar-event\" tappable\n                                         (click)=\"eventSelected(displayEvent.event)\"\n                                         [ngStyle]=\"{top: 25*eventIndex+'px',width: '100%',height:'25px'}\">\n                                        <template [ngTemplateOutlet]=\"dayviewAllDayEventTemplate\"\n                                            [ngOutletContext]=\"{displayEvent:displayEvent}\">\n                                        </template>\n                                    </div>\n                                </td>\n                                <td class=\"calendar-cell\" *ngIf=\"2!==currentViewIndex\">\n                                </td>\n                            </tr>\n                            </tbody>\n                        </table>\n                    </ion-scroll>\n                </div>\n                <init-position-scroll *ngIf=\"2===currentViewIndex\" class=\"dayview-normal-event-container\" [initPosition]=\"initScrollPosition\" [emitEvent]=\"preserveScrollPosition\" (onScroll)=\"setScrollPosition($event)\">\n                    <table class=\"table table-bordered table-fixed dayview-normal-event-table\">\n                        <tbody>\n                            <tr *ngFor=\"let tm of views[2].rows; let i = index\">\n                                <td class=\"calendar-hour-column text-center\">\n                                    {{hourColumnLabels[i]}}\n                                </td>\n                                <td class=\"calendar-cell\" tappable (click)=\"select(tm.time, tm.events)\">\n                                    <div [ngClass]=\"{'calendar-event-wrap': tm.events}\" *ngIf=\"tm.events\">\n                                        <div *ngFor=\"let displayEvent of tm.events\" class=\"calendar-event\" tappable\n                                             (click)=\"eventSelected(displayEvent.event)\"\n                                             [ngStyle]=\"{top: (37*displayEvent.startOffset/hourParts)+'px', left: 100/displayEvent.overlapNumber*displayEvent.position+'%', width: 100/displayEvent.overlapNumber+'%', height: 37*(displayEvent.endIndex -displayEvent.startIndex - (displayEvent.endOffset + displayEvent.startOffset)/hourParts)+'px'}\">\n                                             <template [ngTemplateOutlet]=\"dayviewNormalEventTemplate\"\n                                                 [ngOutletContext]=\"{displayEvent:displayEvent}\">\n                                             </template>\n                                        </div>\n                                    </div>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                </init-position-scroll>\n                <init-position-scroll *ngIf=\"2!==currentViewIndex\" class=\"dayview-normal-event-container\" [initPosition]=\"initScrollPosition\">\n                    <table class=\"table table-bordered table-fixed dayview-normal-event-table\">\n                        <tbody>\n                            <tr *ngFor=\"let tm of views[2].rows; let i = index\">\n                                <td class=\"calendar-hour-column text-center\">\n                                    {{hourColumnLabels[i]}}\n                                </td>\n                                <td class=\"calendar-cell\">\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                </init-position-scroll>\n            </ion-slide>\n        </ion-slides>\n    ",
             styles: ["\n        .table-fixed {\n          table-layout: fixed;\n        }\n\n        .table {\n          width: 100%;\n          max-width: 100%;\n          background-color: transparent;\n        }\n\n        .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td,\n        .table > tbody > tr > td, .table > tfoot > tr > td {\n          padding: 8px;\n          line-height: 20px;\n          vertical-align: top;\n        }\n\n        .table > thead > tr > th {\n          vertical-align: bottom;\n          border-bottom: 2px solid #ddd;\n        }\n\n        .table > thead:first-child > tr:first-child > th, .table > thead:first-child > tr:first-child > td {\n          border-top: 0\n        }\n\n        .table > tbody + tbody {\n          border-top: 2px solid #ddd;\n        }\n\n        .table-bordered {\n          border: 1px solid #ddd;\n        }\n\n        .table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th,\n        .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {\n          border: 1px solid #ddd;\n        }\n\n        .table-bordered > thead > tr > th, .table-bordered > thead > tr > td {\n          border-bottom-width: 2px;\n        }\n\n        .table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {\n          background-color: #f9f9f9\n        }\n\n        .calendar-hour-column {\n          width: 50px;\n          white-space: nowrap;\n        }\n\n        .calendar-event-wrap {\n          position: relative;\n          width: 100%;\n          height: 100%;\n        }\n\n        .calendar-event {\n          position: absolute;\n          padding: 2px;\n          cursor: pointer;\n          z-index: 10000;\n        }\n\n        .calendar-cell {\n          padding: 0 !important;\n          height: 37px;\n        }\n\n        .dayview-allday-label {\n          float: left;\n          height: 100%;\n          line-height: 50px;\n          text-align: center;\n          width: 50px;\n        }\n\n        [dir=\"rtl\"] .dayview-allday-label {\n            border-right: 1px solid #ddd;\n            float: right;\n        }\n\n        .dayview-allday-content-wrapper {\n          margin-left: 50px;\n          overflow: hidden;\n          height: 51px;\n        }\n\n        [dir=\"rtl\"] .dayview-allday-content-wrapper {\n          margin-left: 0;\n          margin-right: 50px;\n        }\n\n        .dayview-allday-content-table {\n          min-height: 50px;\n        }\n\n        .dayview-allday-content-table td {\n          border-left: 1px solid #ddd;\n          border-right: 1px solid #ddd;\n        }\n\n        .dayview-allday-table {\n          height: 50px;\n          position: relative;\n          border-bottom: 1px solid #ddd;\n          font-size: 14px;\n        }\n\n        .dayview-normal-event-container {\n          margin-top: 50px;\n          overflow: hidden;\n          left: 0;\n          right: 0;\n          top: 0;\n          bottom: 0;\n          position: absolute;\n          font-size: 14px;\n        }\n\n        .dayview .slide-zoom {\n          height: 100%;\n        }\n\n        .dayview-allday-content-wrapper scroll-content {\n          width: 100%;\n        }\n\n        ::-webkit-scrollbar,\n        *::-webkit-scrollbar {\n          display: none;\n        }\n\n        .table > tbody > tr > td.calendar-hour-column {\n          padding-left: 0;\n          padding-right: 0;\n          vertical-align: middle;\n        }\n\n        @media (max-width: 750px) {\n          .dayview-allday-label, .calendar-hour-column {\n            width: 31px;\n            font-size: 12px;\n          }\n\n          .dayview-allday-label {\n            padding-top: 4px;\n          }\n\n          .table > tbody > tr > td.calendar-hour-column {\n            padding-left: 0;\n            padding-right: 0;\n            vertical-align: middle;\n            line-height: 12px;\n          }\n\n          .dayview-allday-label {\n            line-height: 20px;\n          }\n\n          .dayview-allday-content-wrapper {\n            margin-left: 31px;\n          }\n\n          [dir=\"rtl\"] .dayview-allday-content-wrapper {\n            margin-left: 0;\n            margin-right: 31px;\n          }\n        }\n    "],
             encapsulation: core_1.ViewEncapsulation.None
-        }), 
-        __metadata('design:paramtypes', [calendar_service_1.CalendarService, core_1.ElementRef])
+        }),
+        __metadata("design:paramtypes", [calendar_service_1.CalendarService, core_1.ElementRef])
     ], DayViewComponent);
     return DayViewComponent;
+    var DayViewComponent_1;
 }());
 exports.DayViewComponent = DayViewComponent;
 //# sourceMappingURL=dayview.js.map

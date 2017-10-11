@@ -11,14 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var core_1 = require('@angular/core');
-var calendar_service_1 = require('./calendar.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var calendar_service_1 = require("./calendar.service");
+var Step;
 (function (Step) {
     Step[Step["QuarterHour"] = 15] = "QuarterHour";
     Step[Step["HalfHour"] = 30] = "HalfHour";
     Step[Step["Hour"] = 60] = "Hour";
-})(exports.Step || (exports.Step = {}));
-var Step = exports.Step;
+})(Step = exports.Step || (exports.Step = {}));
 var CalendarComponent = (function () {
     function CalendarComponent(calendarService, appLocale) {
         this.calendarService = calendarService;
@@ -109,156 +110,157 @@ var CalendarComponent = (function () {
         this.calendarService.loadEvents();
     };
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Date)
+        core_1.Input(),
+        __metadata("design:type", Date),
+        __metadata("design:paramtypes", [Date])
     ], CalendarComponent.prototype, "currentDate", null);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Array)
+        core_1.Input(),
+        __metadata("design:type", Array)
     ], CalendarComponent.prototype, "eventSource", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], CalendarComponent.prototype, "calendarMode", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], CalendarComponent.prototype, "formatDay", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], CalendarComponent.prototype, "formatDayHeader", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], CalendarComponent.prototype, "formatDayTitle", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], CalendarComponent.prototype, "formatWeekTitle", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], CalendarComponent.prototype, "formatMonthTitle", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], CalendarComponent.prototype, "formatWeekViewDayHeader", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], CalendarComponent.prototype, "formatHourColumn", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
+        core_1.Input(),
+        __metadata("design:type", Boolean)
     ], CalendarComponent.prototype, "showEventDetail", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
+        core_1.Input(),
+        __metadata("design:type", Number)
     ], CalendarComponent.prototype, "startingDayMonth", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
+        core_1.Input(),
+        __metadata("design:type", Number)
     ], CalendarComponent.prototype, "startingDayWeek", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], CalendarComponent.prototype, "allDayLabel", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], CalendarComponent.prototype, "noEventsLabel", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], CalendarComponent.prototype, "queryMode", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
+        core_1.Input(),
+        __metadata("design:type", Number)
     ], CalendarComponent.prototype, "step", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
+        core_1.Input(),
+        __metadata("design:type", Boolean)
     ], CalendarComponent.prototype, "autoSelect", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Function)
+        core_1.Input(),
+        __metadata("design:type", Function)
     ], CalendarComponent.prototype, "markDisabled", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', core_1.TemplateRef)
+        core_1.Input(),
+        __metadata("design:type", core_1.TemplateRef)
     ], CalendarComponent.prototype, "monthviewDisplayEventTemplate", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', core_1.TemplateRef)
+        core_1.Input(),
+        __metadata("design:type", core_1.TemplateRef)
     ], CalendarComponent.prototype, "monthviewInactiveDisplayEventTemplate", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', core_1.TemplateRef)
+        core_1.Input(),
+        __metadata("design:type", core_1.TemplateRef)
     ], CalendarComponent.prototype, "monthviewEventDetailTemplate", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', core_1.TemplateRef)
+        core_1.Input(),
+        __metadata("design:type", core_1.TemplateRef)
     ], CalendarComponent.prototype, "weekviewAllDayEventTemplate", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', core_1.TemplateRef)
+        core_1.Input(),
+        __metadata("design:type", core_1.TemplateRef)
     ], CalendarComponent.prototype, "weekviewNormalEventTemplate", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', core_1.TemplateRef)
+        core_1.Input(),
+        __metadata("design:type", core_1.TemplateRef)
     ], CalendarComponent.prototype, "dayviewAllDayEventTemplate", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', core_1.TemplateRef)
+        core_1.Input(),
+        __metadata("design:type", core_1.TemplateRef)
     ], CalendarComponent.prototype, "dayviewNormalEventTemplate", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
+        core_1.Input(),
+        __metadata("design:type", Object)
     ], CalendarComponent.prototype, "dateFormatter", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], CalendarComponent.prototype, "dir", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
+        core_1.Input(),
+        __metadata("design:type", Number)
     ], CalendarComponent.prototype, "scrollToHour", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
+        core_1.Input(),
+        __metadata("design:type", Boolean)
     ], CalendarComponent.prototype, "preserveScrollPosition", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
+        core_1.Input(),
+        __metadata("design:type", Boolean)
     ], CalendarComponent.prototype, "lockSwipeToPrev", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
+        core_1.Input(),
+        __metadata("design:type", Boolean)
     ], CalendarComponent.prototype, "lockSwipes", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], CalendarComponent.prototype, "locale", void 0);
     __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
+        core_1.Output(),
+        __metadata("design:type", Object)
     ], CalendarComponent.prototype, "onCurrentDateChanged", void 0);
     __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
+        core_1.Output(),
+        __metadata("design:type", Object)
     ], CalendarComponent.prototype, "onRangeChanged", void 0);
     __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
+        core_1.Output(),
+        __metadata("design:type", Object)
     ], CalendarComponent.prototype, "onEventSelected", void 0);
     __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
+        core_1.Output(),
+        __metadata("design:type", Object)
     ], CalendarComponent.prototype, "onTimeSelected", void 0);
     __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
+        core_1.Output(),
+        __metadata("design:type", Object)
     ], CalendarComponent.prototype, "onTitleChanged", void 0);
     CalendarComponent = __decorate([
         core_1.Component({
@@ -267,8 +269,8 @@ var CalendarComponent = (function () {
             styles: ["\n        :host > div { height: 100%; }\n\n        .event-detail-container {\n          border-top: 2px darkgrey solid;\n        }\n\n        .no-events-label {\n          font-weight: bold;\n          color: darkgrey;\n          text-align: center;\n        }\n\n        .event-detail {\n          cursor: pointer;\n          white-space: nowrap;\n          text-overflow: ellipsis;\n        }\n\n        .monthview-eventdetail-timecolumn {\n          width: 110px;\n          overflow: hidden;\n        }\n\n        .calendar-event-inner {\n          overflow: hidden;\n          background-color: #3a87ad;\n          color: white;\n          height: 100%;\n          width: 100%;\n          padding: 2px;\n          line-height: 15px;\n        }\n\n        @media (max-width: 750px) {\n          .calendar-event-inner {\n            font-size: 12px;\n          }\n        }\n    "],
             providers: [calendar_service_1.CalendarService]
         }),
-        __param(1, core_1.Inject(core_1.LOCALE_ID)), 
-        __metadata('design:paramtypes', [calendar_service_1.CalendarService, String])
+        __param(1, core_1.Inject(core_1.LOCALE_ID)),
+        __metadata("design:paramtypes", [calendar_service_1.CalendarService, String])
     ], CalendarComponent);
     return CalendarComponent;
 }());
